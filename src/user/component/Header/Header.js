@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function Header() {
   return (
@@ -120,17 +121,17 @@ export default function Header() {
           </button>
           <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div className="navbar-nav mr-auto py-0">
-              <a href="index.html" className="nav-item nav-link active">Home</a>
-              <a href="shop.html" className="nav-item nav-link">Shop</a>
-              <a href="detail.html" className="nav-item nav-link">Shop Detail</a>
+              <NavLink to="/" className="nav-item nav-link active">Home</NavLink>
+              <NavLink to="/shop" className="nav-item nav-link">Shop</NavLink>
+              <NavLink to="/shopdetail" className="nav-item nav-link">Shop Detail</NavLink>
               <div className="nav-item dropdown">
                 <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i className="fa fa-angle-down mt-1" /></a>
                 <div className="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                  <a href="cart.html" className="dropdown-item">Shopping Cart</a>
-                  <a href="checkout.html" className="dropdown-item">Checkout</a>
+                  <NavLink to="/shopping_card" className="dropdown-item">Shopping Cart</NavLink>
+                  <NavLink to="/checkout" className="dropdown-item">Checkout</NavLink>
                 </div>
               </div>
-              <a href="contact.html" className="nav-item nav-link">Contact</a>
+              <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
             </div>
             <div className="navbar-nav ml-auto py-0 d-none d-lg-block">
               <a href className="btn px-0">
