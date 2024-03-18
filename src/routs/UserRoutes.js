@@ -15,8 +15,11 @@ function UserRoutes(props) {
         <Header />
         <Routes >
           <Route exect path='/' element={<Home />} />
+          <Route exect path='/:id' element={<Shop_detail />} />
           <Route exect path='/shop' element={<Shop />} />
+          <Route exect path='/shop/:id' element={<Shop_detail />} />
           <Route exect path='/shopdetail' element={<Shop_detail />} />
+          {/* <Route exect path='/shopdetail/:id' element={<Shop_detail />} /> */}
           <Route exect path='/shopping_card' element={<Shopping_card />} />
           <Route exect path='/checkout' element={<Checkout />} />
           <Route exect path='/contact' element={<Contact />} />

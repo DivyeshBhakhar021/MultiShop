@@ -1,0 +1,89 @@
+{
+    "Product": [
+      {
+        "id": "1",
+        "img": "img/product-1.jpg",
+        "name": "camera",
+        "price":"123.00",
+        "categories":"camera",
+        "color" :"blue"
+        
+      },
+      {
+        "id": "2",
+        "img": "img/product-2.jpg",
+        "name": "T-Shirt",
+        "price":"150.00",
+        "color" :"blue",
+        "categories":"T-Shirt",
+        "size":"XS",
+        "male":"male"
+        
+      },
+      {
+        "id": "3",
+        "img": "img/product-3.jpg",
+        "name": "Table lamp",
+        "price":"100.00",
+        "categories":"table_lamp",
+        "color" :"blue"
+        
+      },
+      {
+        "id": "4",
+        "img": "img/product-4.jpg",
+        "name": "shoes",
+        "price":"200.00",
+        "categories":"shoes",
+        "color" :"black"
+        
+      },
+      {
+        "id": "5",
+        "img": "img/product-5.jpg",
+        "name": "Daron",
+        "price":"100.00",
+        "categories":"daron",
+        "color" :"White"
+        
+      },
+      {
+        "id": "6",
+        "img": "img/product-6.jpg",
+        "name": "watch",
+        "price":"300.00",
+        "categories":"watch",
+        "color" :"black"
+        
+      },
+      {
+        "id": "7",
+        "img": "img/product-7.jpg",
+        "name": "T-Shirt",
+        "price":"150.00",
+        "categories":"T-Shirt",
+        "color" :"black",
+        "size":"S",
+        "female":"female"
+        
+      },
+      {
+        "id": "8",
+        "img": "img/product-8.jpg",
+        "name": "curology",
+        "price":"120.00",
+        "categories":"curology"
+        
+      },
+      {
+        "id": "9",
+        "img": "img/product-9.jpg",
+        "name": "char",
+        "price":"600.00",
+        "categories":"char",
+        "color" :"blue"
+        
+      }
+
+    ]
+}
