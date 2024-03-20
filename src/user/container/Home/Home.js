@@ -18,7 +18,7 @@ function Home(props) {
   console.log(id);
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:7001/Product");
+      const response = await fetch("http://localhost:8001/Product");
       const data = await response.json();
 
       
@@ -158,7 +158,7 @@ function Home(props) {
           {
             category.map((v) => (
               <div className="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <Link  to={`/${category.id}`} >
+                <Link  to={`/${v.id}`} >
                 <a  className="text-decoration-none" href="">
                   <div className="cat-item d-flex align-items-center mb-4">
                     <div className="overflow-hidden" style={{ width: 100, height: 100 }}>
@@ -187,6 +187,7 @@ function Home(props) {
           {
             category.map((v) => (
               <div className="col-lg-3 col-md-4 col-sm-6 pb-1">
+                 <Link  to={`/${v.id}`} >
               <a href="">
             <div className="product-item bg-light mb-4">
               <div className="product-img position-relative overflow-hidden">
@@ -214,6 +215,7 @@ function Home(props) {
               </div>
             </div>
             </a>
+            </Link>
           </div>
             ))
           }
@@ -254,6 +256,7 @@ function Home(props) {
           {
             category.map((v) => (
               <div className="col-lg-3 col-md-4 col-sm-6 pb-1">
+                 <Link  to={`/${v.id}`} >
               <a href="">
             <div className="product-item bg-light mb-4">
               <div className="product-img position-relative overflow-hidden">
@@ -281,6 +284,7 @@ function Home(props) {
               </div>
             </div>
             </a>
+            </Link>
           </div>
             ))
           }

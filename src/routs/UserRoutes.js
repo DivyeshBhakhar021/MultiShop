@@ -8,6 +8,8 @@ import Shopping_card from '../user/container/Page/Shopping_card/Shopping_card';
 import Checkout from '../user/container/Page/Checkout/Checkout';
 import Contact from '../user/container/Page/Contact/Contact';
 import Footer from '../user/component/Footer/Footer';
+import Register from '../user/container/Register/Register';
+import Login from '../user/component/Login/Login';
 
 function UserRoutes(props) {
     return (
@@ -23,6 +25,8 @@ function UserRoutes(props) {
           <Route exect path='/shopping_card' element={<Shopping_card />} />
           <Route exect path='/checkout' element={<Checkout />} />
           <Route exect path='/contact' element={<Contact />} />
+          <Route exect path='/login' element={<Login />} />
+          <Route exect path='/register' element={<Register />} />
         </Routes >
         <Footer />
 

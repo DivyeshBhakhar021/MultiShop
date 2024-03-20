@@ -8,7 +8,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-function Product(props) {
+function Review(props) {
 
   const [open, setOpen] = React.useState(false);
 
@@ -56,7 +56,7 @@ function Product(props) {
 
   return (
     <>
-    <h1>product</h1>
+    <h1>Review</h1>
       <div style={{ textAlign: 'end', marginRight:'50px' }}>
         <React.Fragment>
           <Button variant="outlined" onClick={handleClickOpen}>
@@ -166,4 +166,4 @@ function Product(props) {
   );
 }
 
-export default Product;
+export default Review;

@@ -11,10 +11,10 @@ function App() {
         <Route exect path='/*' element={<UserRoutes />} />
         <Route element={<PrivateRoutes />}>
           <Route exect path='/admin/*' element={<AdminRoutes />} />
-        </Route>
+        </Route>  
 
       </Routes>
-    </>
+    </> 
 
   );
 }

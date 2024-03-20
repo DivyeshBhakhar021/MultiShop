@@ -10,10 +10,13 @@ function Shop(props) {
   const [price, setprice] = useState([]);
   const [color, setcolor] = useState([]);
   const [size, setsize] = useState([]);
+  
+  const [search, setSearchData] = useState('');
+  const [allPrice,setallPrice] = useState ('');
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:7001/Product");
+      const response = await fetch("http://localhost:8001/Product");
       const data = await response.json();
       setProductData(data);
 
@@ -31,6 +34,17 @@ function Shop(props) {
       console.error("Error fetching data:", error);
     }
   };
+
+
+  const Filterdata = () => {
+
+    
+    if (allPrice) {
+      return productData.filter(v => v.price === allPrice)
+    }
+  
+    return Filterdata
+  }
 
   useEffect(() => {
     fetchData();
@@ -70,7 +84,7 @@ function Shop(props) {
                   price.map((v) => {
                     return (
                       <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" className="custom-control-input" id={v} />
+                        <input  onClick={() => setallPrice('')} type="checkbox" className="custom-control-input" id={v} />
                         <label className="custom-control-label" htmlFor={v}>{v}</label>
                         <span className="badge border font-weight-normal">in stock</span>
                       </div>

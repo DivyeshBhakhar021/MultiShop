@@ -142,6 +142,10 @@ export default function Header() {
                 <i className="fas fa-shopping-cart text-primary" />
                 <span className="badge text-secondary border border-secondary rounded-circle" style={{paddingBottom: 2}}>0</span>
               </a>
+              <NavLink to='/login' className="btn px-0 ml-3">
+              <i className="fas fa-user  text-primary" />
+              <span className="badge text-secondary border border-secondary rounded-circle" style={{paddingBottom: 2}}>0</span>
+            </NavLink>
             </div>
           </div>
         </nav>
