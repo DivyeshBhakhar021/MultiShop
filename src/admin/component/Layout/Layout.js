@@ -109,6 +109,11 @@ const adminlink =[
       to:'/admin/review',
       icon:<ReviewsIcon/>
   },
+  {
+    title:'facilities',
+    to:'/admin/facilities',
+    icon:<ReviewsIcon/>
+},
     
 ]
 
