@@ -10,22 +10,25 @@ import { useFormik } from 'formik';
 import { object, string, number, date, InferType } from 'yup';
 import { DataGrid } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from 'react-redux';
-import { addfacilities, deleteFacilities, editFacilities } from '../../../reduct/action/facilities_action';
+import { addfacilities, deleteFacilities, editFacilities, getdata } from '../../../reduct/action/facilities_action';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useState } from 'react';
-// import { CircularProgress } from '@mui/material';
 import { Spinner } from 'reactstrap';
+import { useEffect } from 'react';
 
 
 export default function Facilities() {
     const [open, setOpen] = useState(false);
     const [update, setupdate] = useState(false);
-    const [loading, setLoading] = useState(true);
 
-    const facilities = useSelector(state => state.facilities)
+     const facilities = useSelector(state => state.facilities)
     console.log(facilities);
+
+    useEffect(()=>{
+        dispatch(getdata())
+    },[])
 
     const dispatch = useDispatch();
 
@@ -128,13 +131,9 @@ export default function Facilities() {
     return (
         <>
             {
-                facilities.isLoading
-                    ?
-                    <p>
-                        <Spinner>
-                            .
-                        </Spinner>
-                    </p> :
+                facilities.isLoading ?
+                    <Spinner>
+                    </Spinner> :
                     <>
                         <Button variant="outlined" onClick={handleClickOpen}>
                             Add Facilities
