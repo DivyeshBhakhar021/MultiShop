@@ -4,11 +4,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link, useParams } from 'react-router-dom';
 
-
-
-
 function Home(props) {
-
 
   const [category, setcategory] = useState([]);
   const [product, setproduct] = useState([]); 

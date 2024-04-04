@@ -24,6 +24,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import ReviewsIcon from '@mui/icons-material/Reviews';
 import { NavLink } from 'react-router-dom';
+import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 
 const drawerWidth = 240;
 
@@ -113,6 +114,11 @@ const adminlink =[
     title:'facilities',
     to:'/admin/facilities',
     icon:<ReviewsIcon/>
+},
+{
+  title:'Productdata',
+  to:'/admin/productdata',
+  icon:<EmojiEmotionsIcon/>
 },
     
 ]
