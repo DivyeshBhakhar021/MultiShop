@@ -74,6 +74,12 @@
       "price": "600.00",
       "categories": "char",
       "color": "blue"
+    },
+    {
+      "id": "cf93",
+      "name": "hello",
+      "details": "hello",
+      "price": 12
     }
   ],
   "review": [

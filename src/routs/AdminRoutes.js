@@ -5,7 +5,7 @@ import Layout from '../admin/component/Layout/Layout';
 import Categories from '../admin/component/Categories/Categories';
 import Review from '../admin/component/Review/Review';
 import Facilities from '../user/container/Facilities/Facilities';
-import Productdata from '../user/container/product/Product';
+import Productdata from '../user/container/product/Productdata';
 
 
 function AdminRoutes(props) {

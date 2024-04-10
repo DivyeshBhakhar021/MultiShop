@@ -5,6 +5,12 @@ export const LODING_FACILITIES = "LODING_FACILITIES";
 export const GET_FACILITIES = "GET_FACILITIES"
 
 
+export const GET_PRODUCT = "GET_PRODUCT"   
+export const ADD_PRODUCT = "ADD_PRODUCT";
+export const DELETE_PRODUCT = "DELETE_PRODUCT";
+export const EDIT_PRODUCT = "EDIT_PRODUCT";
+export const LODING_PRODUCT = "LODING_PRODUCT";
+export const ERROR_PRODUCT = "ERROR_PRODUCT";
 
 export const GET_REVIEW = "GET_REVIEW"   
 export const ADD_REVIEW = "ADD_REVIEW";
