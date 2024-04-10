@@ -6,6 +6,7 @@ import { Link, NavLink, useParams } from 'react-router-dom';
 import Rating from '@mui/material/Rating';
 import { useDispatch, useSelector } from "react-redux";
 import Review from '../../review/Review';
+import { getreview } from '../../../reduct/action/review.action';
 function Shop_detail(props) {
   const [productData, setProductData] = useState([]);
   const [SortBy, setSortBy] = useState('');
@@ -17,6 +18,7 @@ function Shop_detail(props) {
   const review = useSelector((state) => state.review)
   console.log(review);
 
+  const dispatch = useDispatch();
 
   const fetchData = async () => {
     try {
@@ -33,8 +35,10 @@ function Shop_detail(props) {
 
   useEffect(() => {
     fetchData();
+    dispatch(getreview())
   }, []);
 
+  
 
   const vanderdata = {
     loop: true,
@@ -215,7 +219,7 @@ function Shop_detail(props) {
               <div className="nav nav-tabs mb-4">
                 <a className="nav-item nav-link text-dark active" data-toggle="tab" href="#tab-pane-1">Description</a>
                 <a className="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-2">Information</a>
-                <a className="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-3">Reviews (0)</a>
+                <a className="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-3">Reviews </a>
               </div>
               <div className="tab-content">
                 <div className="tab-pane fade show active" id="tab-pane-1">
