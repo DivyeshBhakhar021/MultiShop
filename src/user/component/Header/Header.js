@@ -1,7 +1,16 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 
 export default function Header() {
+
+
+  const cart = useSelector(state => state.cart)
+  console.log(cart);
+
+
+  const cartCount = cart.cart.reduce((total, item) => total + item.qty, 0)
+
   return (
     <div> 
      <div>
@@ -138,10 +147,10 @@ export default function Header() {
                 <i className="fas fa-heart text-primary" />
                 <span className="badge text-secondary border border-secondary rounded-circle" style={{paddingBottom: 2}}>0</span>
               </a>
-              <a href className="btn px-0 ml-3">
+              <NavLink to='/Shopping_card' className="btn px-0 ml-3">
                 <i className="fas fa-shopping-cart text-primary" />
-                <span className="badge text-secondary border border-secondary rounded-circle" style={{paddingBottom: 2}}>0</span>
-              </a>
+                <span className="badge text-secondary border border-secondary rounded-circle" style={{paddingBottom: 2}}>{cartCount}</span>
+              </NavLink>
               <NavLink to='/login' className="btn px-0 ml-3">
               <i className="fas fa-user  text-primary" />
               <span className="badge text-secondary border border-secondary rounded-circle" style={{paddingBottom: 2}}>0</span>

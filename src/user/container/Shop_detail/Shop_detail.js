@@ -5,8 +5,9 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link, NavLink, useParams } from 'react-router-dom';
 import Rating from '@mui/material/Rating';
 import { useDispatch, useSelector } from "react-redux";
-import Review from '../../review/Review';
+import Review from '../review/Review';
 import { getreview } from '../../../reduct/action/review.action';
+import { addToCart } from '../../../admin/component/cart/cart.slice';
 function Shop_detail(props) {
   const [productData, setProductData] = useState([]);
   const [SortBy, setSortBy] = useState('');
@@ -17,6 +18,9 @@ function Shop_detail(props) {
 
   const review = useSelector((state) => state.review)
   console.log(review);
+
+  const cart = useSelector((state) => state.cart)
+  console.log(cart);
 
   const dispatch = useDispatch();
 
@@ -38,7 +42,9 @@ function Shop_detail(props) {
     dispatch(getreview())
   }, []);
 
-  
+  const handalcart = () => {
+    dispatch(addToCart(id))
+  }
 
   const vanderdata = {
     loop: true,
@@ -124,8 +130,13 @@ function Shop_detail(props) {
                       </button>
                     </div>
                   </div>
-                  <button className="btn btn-primary px-3"><i className="fa fa-shopping-cart mr-1" /> Add To
-                    Cart</button>
+                  <NavLink onClick={handalcart}
+                    className="btn btn-primary px-3"
+                    // to={"/Shopping_card"}
+                  >
+                    <i className="fa fa-shopping-cart mr-1" />
+                    Add To Cart
+                  </NavLink>
                 </div>
                 <div className="d-flex pt-2">
                   <strong className="text-dark mr-2">Share on:</strong>
@@ -270,20 +281,20 @@ function Shop_detail(props) {
                     <div className="col-md-6">
 
                       {
-                         review.isLoding ? <p>loding...</p> :
-                         review.error ? <h1>{review.error}</h1> :
-                           review.review.map((v, index) => (
-                          <div className="media mb-4">
-                            <img src="img/user.jpg" alt="Image" className="img-fluid mr-3 mt-1" style={{ width: 45 }} />
-                            <div className="media-body">
-                              <h5>{v.name}</h5><p>{v.reviewDateing}</p>
-                              <div className="text-primary mb-2">
-                              <Rating name="read-only" value={v.rating} readOnly />
+                        review.isLoding ? <p>loding...</p> :
+                          review.error ? <h1>{review.error}</h1> :
+                            review.review.map((v, index) => (
+                              <div className="media mb-4">
+                                <img src="img/user.jpg" alt="Image" className="img-fluid mr-3 mt-1" style={{ width: 45 }} />
+                                <div className="media-body">
+                                  <h5>{v.name}</h5><p>{v.reviewDateing}</p>
+                                  <div className="text-primary mb-2">
+                                    <Rating name="read-only" value={v.rating} readOnly />
+                                  </div>
+                                  <p>{v.review}</p>
+                                </div>
                               </div>
-                              <p>{v.review}</p>
-                            </div>
-                          </div>
-                        ))
+                            ))
                       }
 
                     </div>

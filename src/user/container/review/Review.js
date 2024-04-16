@@ -10,7 +10,7 @@ import DialogContent from "@mui/material/DialogContent";
 import { Button } from "@mui/material";
 import DialogActions from "@mui/material/DialogActions";
 import { useDispatch, useSelector } from "react-redux";
-import { addreview } from "../../reduct/action/review.action";
+import { addreview } from "../../../reduct/action/review.action";
 
 
 
