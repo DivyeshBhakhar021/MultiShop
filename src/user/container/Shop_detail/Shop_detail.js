@@ -7,7 +7,7 @@ import Rating from '@mui/material/Rating';
 import { useDispatch, useSelector } from "react-redux";
 import Review from '../review/Review';
 import { getreview } from '../../../reduct/action/review.action';
-import { addToCart } from '../../../admin/component/cart/cart.slice';
+import { addToCart, decrementQty, incrementQty } from '../../../admin/component/cart/cart.slice';
 function Shop_detail(props) {
   const [productData, setProductData] = useState([]);
   const [SortBy, setSortBy] = useState('');
@@ -45,6 +45,17 @@ function Shop_detail(props) {
   const handalcart = () => {
     dispatch(addToCart(id))
   }
+
+  const handalincrement = (id) => {
+      console.log(id);
+      dispatch(incrementQty(id))
+  }
+
+  const handaldecrement = (id) => {
+      console.log(id);
+      dispatch(decrementQty(id))
+  }
+
 
   const vanderdata = {
     loop: true,
@@ -91,7 +102,7 @@ function Shop_detail(props) {
 
         {id
           ?
-          <div className="row px-xl-5">
+          <div className="row px-xl-5"> 
             <div className="col-lg-5 mb-30">
               <div id="product-carousel" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner bg-light">
@@ -113,19 +124,19 @@ function Shop_detail(props) {
                   <small className="pt-1">(99 Reviews)</small>
                 </div>
                 <h3 className="font-weight-semi-bold mb-4">${detlis?.price}.00</h3>
-                <p className="mb-4">Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit
-                  clita ea. Sanc ipsum et, labore clita lorem magna duo dolor no sea
-                  Nonumy</p>
+                <p className="mb-4">{detlis?.details}</p>
                 <div className="d-flex align-items-center mb-4 pt-2">
                   <div className="input-group quantity mr-3" style={{ width: 130 }}>
                     <div className="input-group-btn">
-                      <button className="btn btn-primary btn-minus">
+                      <button onClick={() =>handaldecrement (detlis?.id)} className="btn btn-primary btn-minus">
                         <i className="fa fa-minus" />
                       </button>
                     </div>
-                    <input type="text" className="form-control bg-secondary border-0 text-center" defaultValue={1} />
+                    <span  className="form-control bg-secondary border-0 text-center" >
+                      {detlis.qty}
+                      </span>
                     <div className="input-group-btn">
-                      <button className="btn btn-primary btn-plus">
+                      <button onClick={() => handalincrement(detlis?.id)}  className="btn btn-primary btn-plus">
                         <i className="fa fa-plus" />
                       </button>
                     </div>
