@@ -14,7 +14,7 @@ export const productdata = () => async (dispatch) => {
 
     try {
         dispatch(lodinProduct());
-        await axios.get(BATCH_URL + 'fruit')
+        await axios.get(BATCH_URL + 'Product')
             .then((response) => {
                 dispatch({ type: GET_PRODUCT, payload: response.data })
             })

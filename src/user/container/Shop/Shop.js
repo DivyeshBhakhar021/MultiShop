@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addToCart } from '../../../admin/component/cart/cart.slice';
+import { productdata } from '../../../reduct/reducer/Product.action';
 
 
 function Shop(props) {
@@ -49,6 +52,24 @@ function Shop(props) {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const dispatch = useDispatch();
+
+const product = useSelector(state => state.product)
+console.log(product);
+
+const Cart = useSelector(state => state.cart)
+console.log(Cart);
+
+const handalproduct = (id) => {
+  console.log(id);
+  dispatch(addToCart(id));
+}
+
+  useEffect(() => {
+    dispatch(productdata());
+  }, []);
+
 
 
   return (
@@ -196,7 +217,7 @@ function Shop(props) {
                             <h5>${product.price}</h5>
                           </div>
                           <div className="d-flex justify-content-between ">
-                            <a onClick={() => setSortBy()} href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                            <Link  onClick={()=>handalproduct(product.id)} href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</Link>
                           </div>
                         </div>
                       </div>
