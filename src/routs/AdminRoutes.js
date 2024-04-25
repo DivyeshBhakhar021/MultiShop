@@ -6,6 +6,7 @@ import Categories from '../admin/component/Categories/Categories';
 import Review from '../admin/component/Review/Review';
 import Facilities from '../user/container/Facilities/Facilities';
 import Productdata from '../user/container/product/Productdata';
+import Coupon from '../admin/component/coupon/Coupon';
 
 
 function AdminRoutes(props) {
@@ -19,6 +20,7 @@ function AdminRoutes(props) {
                 <Route exect path='/review' element={< Review/>} />
                 <Route exect path='/facilities' element={< Facilities/>} />
                 <Route exect path='/productdata'element={<Productdata />}/>
+                <Route exect path='/coupon'element={<Coupon />}/>
             </Routes>
             </Layout>
         </div>

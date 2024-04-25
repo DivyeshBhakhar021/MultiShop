@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom'
+import { ThemeContext } from '../../../context/ThemeContext';
+import { IconButton } from '@mui/material';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 export default function Header() {
 
@@ -10,6 +14,16 @@ export default function Header() {
 
 
   const cartCount = cart.cart.reduce((total, item) => total + item.qty, 0)
+
+
+  const themecontect = useContext(ThemeContext);
+  console.log(themecontect);
+
+  const handaltheme = () => {
+    // console.log("abv");
+    themecontect.toggleTheme(themecontect.theme)
+  }
+
 
   return (
     <div> 
@@ -155,6 +169,11 @@ export default function Header() {
               <i className="fas fa-user  text-primary" />
               <span className="badge text-secondary border border-secondary rounded-circle" style={{paddingBottom: 2}}>0</span>
             </NavLink>
+             <IconButton  onClick={handaltheme} sx={{ ml: 1 }} color="green">
+                  {/* <Brightness7Icon /> */}
+                  {themecontect.theme === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                </IconButton>
+
             </div>
           </div>
         </nav>

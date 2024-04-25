@@ -120,7 +120,11 @@ const adminlink =[
   to:'/admin/productdata',
   icon:<EmojiEmotionsIcon/>
 },
-    
+{
+  title:'coupon',
+  to:'/admin/coupon',
+  icon:<EmojiEmotionsIcon/>
+},  
 ]
 
 export default function Layout({children}) {
